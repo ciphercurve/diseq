@@ -8,11 +8,11 @@ The project is associated with [Ciphercurve GmbH](https://ciphercurve.com), a so
 
 Contact: *contact@ciphercurve.com*
 
-Diseq acts as a distributed alternative to centralized (or decentralized) sequencing. Based on a novel zero knowledge consensus with deterministic validator selection, Diseq can operate with 51% percent of a fixed validator set being active and honest. Messages are added to a mempool and stored in the block once consensus has concluded and sufficiently many signatures from active nodes were collected. Nodes synchronize blocks to keep an immutable record of the message sequence.
+Diseq acts as a distributed alternative to centralized (or decentralized) sequencing. Based on a novel zero knowledge consensus with deterministic validator selection, Diseq can operate with n > 50% percent of a fixed validator set being active and honest. Messages are added to a mempool and stored in the block once consensus has concluded and sufficiently many signatures from active nodes were collected. Nodes synchronize blocks to keep an immutable record of the message sequence.
 
 Read the full [Litepaper](https://github.com/jonas089/zk-vrf-consensus/tree/master/whitepaper).
 
-If you are an expert then consider also reading [some context about BFT](https://github.com/jonas089/zk-vrf-consensus/blob/master/whitepaper/byzantine-fault.md).
+If you are an expert in consensus mechanisms, consider reading [some context about BFT](https://github.com/jonas089/zk-vrf-consensus/blob/master/whitepaper/byzantine-fault.md).
 # Recommended: Run a local network of 4 Nodes with Docker
 I began taking this passion project quite seriously, so I added an SQLite DB to store Blocks and Messages.
 Messages are still read as a single chunk so the txpool for each Block must fit in memory, I do intend to change this.
@@ -49,5 +49,12 @@ To view a Block when running the example setup, request `127.0.0.1:8080/get/bloc
 # Merkle Proofs
 Whenever a Block is stored, all messages in that block are inserted into the custom [Merkle Patricia Trie](https://github.com/jonas089/jonas089-trie).
 For every individual message in the trie a merkle proof can be obtained. See an example for this [here](https://github.com/jonas089/distributed-sequencer/blob/master/tests/api.rs).
+
+# Vision and Milestones
+In order for this project to evolve into a practical alternative to other sequencing solutions, shared sequencing must be implemented. Currently nodes take turns in submitting sequenced transactions from their pool. This is a good start, but not distributed to the degree that we want to achieve. Nodes should be modified to synchronize their transaction pool before the block proposal stage, and a commitment over a deterministically established, sequence should be included in the block. 
+
+Once the implementation of said feature has been completed and some of the open issues have been addressed, the sequencer will be ready for use in a decentralized context. This could imply introducing a tokenomic model in order for new validators to join the network and perhaps to form an economic incentive for those operating these nodes, or setting up shared instances with partners to run distributed, not decentralized, sequencing infrastructure.
+
+Currently we do not plan to add a token to the Diseq codebase, but it might become feasible to build a tokenomic model and decentralized sequencer on top of this distributed basis in the future.
 
 *Copyright [Ciphercurve Gmbh](https://ciphercurve.com), 2025*
