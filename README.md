@@ -4,18 +4,15 @@ The logos were created by [Imran Piash](https://www.fiverr.com/imranpiash?source
 
 # DISEQ Proof of Concept: Distributed Message Sequencing
 Diseq is a distributed sequencer built by [Jonas Pauli](https://www.linkedin.com/in/jonas-pauli/), a blockchain research engineer from Switzerland.
+The project is associated with [Ciphercurve GmbH](https://ciphercurve.com), a software company based in Zug-Baar (ch).
 
-> [!NOTE]
-> Feel free to reach out and ask me any questions you may have regarding this project,
-> I am always eager to exchange ideas and knowledge on consensus and distributed systems with fellow
-> cryptographers & engineers.
+Contact: *contact@ciphercurve.com*, click [here](mailto:contact@ciphercurve.com) to compose a mail.
 
 Diseq acts as a distributed alternative to centralized (or decentralized) sequencing. Based on a novel zero knowledge consensus with deterministic validator selection, Diseq can operate with 51% percent of a fixed validator set being active and honest. Messages are added to a mempool and stored in the block once consensus has concluded and sufficiently many signatures from active nodes were collected. Nodes synchronize blocks to keep an immutable record of the message sequence.
 
 Read the full [Litepaper](https://github.com/jonas089/zk-vrf-consensus/tree/master/whitepaper).
 
 If you are an expert then consider also reading [some context about BFT](https://github.com/jonas089/zk-vrf-consensus/blob/master/whitepaper/byzantine-fault.md).
-
 # Recommended: Run a local network of 4 Nodes with Docker
 I began taking this passion project quite seriously, so I added an SQLite DB to store Blocks and Messages.
 Messages are still read as a single chunk so the txpool for each Block must fit in memory, I do intend to change this.
