@@ -6,7 +6,7 @@ The logos were created by [Imran Piash](https://www.fiverr.com/imranpiash?source
 Diseq is a distributed sequencer built by [Jonas Pauli](https://www.linkedin.com/in/jonas-pauli/), a blockchain research engineer from Switzerland.
 The project is associated with [Ciphercurve GmbH](https://ciphercurve.com), a software company based in Zug-Baar (ch).
 
-Contact: *contact@ciphercurve.com*, click [here](mailto:contact@ciphercurve.com) to compose a mail.
+Contact: *contact@ciphercurve.com*
 
 Diseq acts as a distributed alternative to centralized (or decentralized) sequencing. Based on a novel zero knowledge consensus with deterministic validator selection, Diseq can operate with 51% percent of a fixed validator set being active and honest. Messages are added to a mempool and stored in the block once consensus has concluded and sufficiently many signatures from active nodes were collected. Nodes synchronize blocks to keep an immutable record of the message sequence.
 
@@ -50,4 +50,4 @@ To view a Block when running the example setup, request `127.0.0.1:8080/get/bloc
 Whenever a Block is stored, all messages in that block are inserted into the custom [Merkle Patricia Trie](https://github.com/jonas089/jonas089-trie).
 For every individual message in the trie a merkle proof can be obtained. See an example for this [here](https://github.com/jonas089/distributed-sequencer/blob/master/tests/api.rs).
 
-Copyright 2025, [Ciphercurve Gmbh](https://ciphercurve.com).
+*Copyright [Ciphercurve Gmbh](https://ciphercurve.com), 2025*
